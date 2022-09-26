@@ -7,15 +7,7 @@ const mongoose = require("mongoose");
 const port = process.env.PORT;
 const cors = require("cors");
 
-// connectDB()
-
-mongoose
-  //   .connect("mngodb+srv://Nuha:Nuha@cluster0.yyzbd.moongodb.net/TrufDb?retryWrites=true&w=majority")
-  .connect(
-    "mongodb+srv://playo:playo@cluster0.bfz7zye.mongodb.net/?retryWrites=true&w=majority"
-  )
-  .then(() => console.log("connected to MOngodb"))
-  .catch((err) => console.error(err));
+connectDB();
 
 const app = express();
 
@@ -24,7 +16,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
- 
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/districts", require("./routes/districtRoutes"));
 app.use("/api/personalDetails", require("./routes/personalDetailRoutes"));
