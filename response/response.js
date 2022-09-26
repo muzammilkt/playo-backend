@@ -1,3 +1,3 @@
-const response = async (data, message, statusCode) => {
-  return { data, message, statusCode };
+exports.success = (data, message, statusCode) => {
+  return { data: data };
 };
