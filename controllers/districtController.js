@@ -46,7 +46,7 @@ const setDistricts = asyncHandler(async (req, res) => {
         res.json(a1)
 
     } catch (err) {
-        res.send('Error')
+        res.send(err.message)
     }
 
 
